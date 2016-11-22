@@ -3,12 +3,11 @@
 通过路由的方式实现页面之间的跳转，支持拦截器功能，即在跳转某些页面时通过判断是否满足某些条件来决定是否进行跳转，如是否需要登录等.
 
 支持以下几种配置方式
-
 "/login/:name/" //其中name为必传参数
 "/login/:name/:age?" //其中name为必传参数，age为可选参数
 "/login/:name/@user" //其中name与user均为必传参数，但是user为可序列化对象
-页面跳转是传递参数的方式
 
+页面跳转是传递参数的方式
 router.url("/login/sky) //通过url传递，只有一个参数 name=sky
 router.url("/login/sky/33) //错误，由于age为可选参数，所以只能通过addParam的方式传递所有参数
 router.url("/login).addParam("name", "sky")).addParam("age", "33") //正确
